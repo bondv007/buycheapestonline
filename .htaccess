@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+Options +Indexes
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+[^/])$ $1/
+RewriteRule ^out_frame/(.*)$ out_frame.php?id=$1 [L]
+RewriteRule ^admin$ Admin/index.php?qstr=$1 [L]
+RewriteRule ^(.*)/$ index.php?qstr=$1 [L]
+
